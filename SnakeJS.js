@@ -135,7 +135,7 @@ class SnakeJS{
         if (this.intervalID == null){
             this.intervalID = setInterval(() =>{
                 this.gameLoop()
-            },750)
+            },500)
         }
     }
 
