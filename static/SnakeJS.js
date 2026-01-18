@@ -79,7 +79,6 @@ class SnakeJS{
     updateSpeed(){
         if (this.playerScore % 10 == 0){
             this.playerSpeed += 0.25
-            console.log(this.playerSpeed)
             this.endGame()
             this.startGame()
         }   
