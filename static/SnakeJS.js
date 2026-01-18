@@ -77,8 +77,9 @@ class SnakeJS{
 
     // --- Updates player speed based on their length ---
     updateSpeed(){
-        if (this.playerLength >= (this.playerLengthMaximum / 10) - 5){
-            this.playerSpeed += 0.1
+        if (this.playerScore % 10 == 0){
+            this.playerSpeed += 0.25
+            console.log(this.playerSpeed)
             this.endGame()
             this.startGame()
         }   
@@ -117,6 +118,8 @@ class SnakeJS{
             this.appleOnMap = false
             this.playerLength += 1
             this.playerScore += 1
+
+            this.updateSpeed()
         }
     }  
 
@@ -180,7 +183,6 @@ class SnakeJS{
     // --- Main game loop: Combination of updatePlayerCoords, updateSpeed and rendeGame---
     gameLoop(){
         this.updatePlayerCoords(this.movements[this.playerMovement])
-        this.updateSpeed()
         this.renderGame()
     }
 
